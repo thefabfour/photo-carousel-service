@@ -1,8 +1,10 @@
 const { Schema, model, connect } = require('mongoose');
 
 connect('mongodb://localhost/', { useNewUrlParser: true, useUnifiedTopology: true })
+  // eslint-disable-next-line no-console
   .then(() => console.log('Successfully connected to MongoDB!'))
-  .catch(err => console.log('Error connecting to the database.', err));
+  // eslint-disable-next-line no-console
+  .catch((err) => console.log('Error connecting to the database.', err));
 
 const photoSchema = new Schema({
   listingId: {
@@ -34,8 +36,8 @@ const photoSchema = new Schema({
 
 const PhotoListing = model('Kitten', photoSchema);
 
-//TODO: ADD
+// TODO: ADD
 
 module.exports = {
-
+  PhotoListing,
 };
