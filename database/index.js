@@ -42,10 +42,6 @@ const photoSchema = new mongoose.Schema({
 
 const PhotoCollection = mongoose.model('Photo', photoSchema);
 
-// PhotoCollection.methods.addMany = () => {
-
-// }
-
 module.exports = {
   PhotoCollection,
   db,
