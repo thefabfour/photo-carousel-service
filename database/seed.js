@@ -1,13 +1,13 @@
 // Property ID Range: 30506101-30506200
 const faker = require('faker');
-const db = require('./index.js');
+const { db, PhotoCollection } = require('./index.js');
 
-const roomTypes = ['Living Room', 'Full kitchen', 'Full bathroom', 'Entry', 'Bedroom Area', 'Exterior', 'Patio', 'Dining room']
+const roomTypes = ['Living area', 'Full kitchen', 'Dining room', 'Full bathroom', 'Bedroom Area', 'Entry', 'Exterior', 'Patio'];
 
 const propertyListingGenerator = () => {
   const listings = [];
 
-  for (let id = 30506101; id < 30506200; id += 1) {
+  for (let id = 30506101; id <= 30506200; id += 1) {
     const photos = photoListGenerator();
     const propertyListing = {
       listingId: id,
@@ -20,31 +20,34 @@ const propertyListingGenerator = () => {
 };
 
 const photoListGenerator = () => {
-  const totalPhotos = 0; // TODO Create random number gen b/w 5-??
+  const totalPhotos = Math.floor(Math.random() * 10 + 5);
   const photos = [];
   for (let photoId = 1; photoId < totalPhotos; photoId += 1) {
-    photoGenerator(photoId);
+    photos.push(photoGenerator(photoId));
   }
 
   return photos;
 };
 
-const photoGenerator = (photoId) => {
+const photoGenerator = (photoId) => ({
+  id: photoId,
+  imageUrl: `https://loremflickr.com/1200/880/house/all?lock=${photoId}`,
+  thumbnailUrl: `https://loremflickr.com/600/450/house/all?lock=${photoId}`,
+  description: faker.lorem.sentence(),
+  room: roomTypes[Math.floor(Math.random() * (roomTypes.length - 1))],
+});
 
-  const photo = {
-    id: photoId,
-    url: faker.image.city(),
-    description: faker.lorem.sentence(),
-    room: '', // TODO Create a means to select a random room
-  };
-
+const sampleListings = propertyListingGenerator();
+// console.log(sampleListings);
+const insertSampleListings = () => {
+  // PhotoCollection.create(sampleListings)
+  PhotoCollection.deleteMany()
+    .then(() => PhotoCollection.create(sampleListings))
+    .then((result) => console.log('Database seed successful!', result))
+    .catch((error) => console.log('Database seed unsuccessful!', error))
+    .then(() => process.exit());
 };
 
-let sampleListings = propertyListingGenerator();
-console.log(sampleListings);
-// const insertSampleListings = () => {
-//   db.create(sampleListings)
-//     .then(() => db.disconnect());
-// };
+insertSampleListings();
 
-// insertSampleListings();
+// console.table(sampleListings[0].photos)

@@ -1,12 +1,15 @@
-const { Schema, model, connect } = require('mongoose');
+const mongoose = require('mongoose');
 
-connect('mongodb://localhost/', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost/fec', { useNewUrlParser: true, useUnifiedTopology: true })
   // eslint-disable-next-line no-console
   .then(() => console.log('Successfully connected to MongoDB!'))
   // eslint-disable-next-line no-console
   .catch((err) => console.log('Error connecting to the database.', err));
 
-const photoSchema = new Schema({
+mongoose.Promise = global.Promise;
+const db = mongoose.connection;
+
+const photoSchema = new mongoose.Schema({
   listingId: {
     type: Number,
     required: true,
@@ -17,7 +20,11 @@ const photoSchema = new Schema({
         type: Number,
         required: true,
       },
-      url: {
+      thumbnailUrl: {
+        type: String,
+        required: true,
+      },
+      imageUrl: {
         type: String,
         required: true,
       },
@@ -34,10 +41,13 @@ const photoSchema = new Schema({
   ],
 });
 
-const PhotoListing = model('Kitten', photoSchema);
+const PhotoCollection = mongoose.model('Photo', photoSchema);
 
-// TODO: ADD
+// PhotoCollection.methods.addMany = () => {
+
+// }
 
 module.exports = {
-  PhotoListing,
+  PhotoCollection,
+  db,
 };

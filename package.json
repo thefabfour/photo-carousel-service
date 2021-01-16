@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel": "npx babel --watch src --out-dir . --presets react-app/prod",
     "react-dev": "webpack -w",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "seed": "node database/seed.js"
   },
   "keywords": [],
   "author": "Kyle Cordell",
