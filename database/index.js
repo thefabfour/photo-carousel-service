@@ -6,7 +6,6 @@ mongoose.connect('mongodb://localhost/fec', { useNewUrlParser: true, useUnifiedT
   // eslint-disable-next-line no-console
   .catch((err) => console.log('Error connecting to the database.', err));
 
-mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 
 const photoSchema = new mongoose.Schema({
