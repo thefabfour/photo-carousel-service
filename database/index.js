@@ -42,7 +42,12 @@ const photoSchema = new mongoose.Schema({
 
 const PhotoCollection = mongoose.model('Photo', photoSchema);
 
+const getPhotos = (id) => (
+  PhotoCollection.find({ listingId: id })
+);
+
 module.exports = {
   PhotoCollection,
   db,
+  getPhotos,
 };
