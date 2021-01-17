@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
 import PhotoItem from './PhotoItem.jsx';
+import Button from './Button.jsx';
 
 
 const PhotoGrid = (props) => {
@@ -20,6 +22,7 @@ const PhotoGrid = (props) => {
   return (
     <div>
       {photos.slice(0, 5).map((photo) => <PhotoItem photo={photo} key={photo.id} />)}
+      <Button />
     </div>
   );
 };
