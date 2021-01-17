@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 import PhotoGrid from './components/PhotoGrid.jsx';
 
 ReactDOM.render(
-  <PhotoGrid />,
+  <PhotoGrid listingId="30506101" />,
   document.getElementById('photos-module'),
 );
