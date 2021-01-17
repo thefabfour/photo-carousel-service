@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const PhotoGridItem = (props) => {
+const PhotoItem = (props) => {
   const { thumbnailUrl, imageUrl, description } = props.photo;
 
   // useEffect( () => {
@@ -8,10 +8,8 @@ const PhotoGridItem = (props) => {
   // }, []);
 
   return (
-    <div>
-      <img src={imageUrl} alt={description} />
-    </div>
+    <img src={thumbnailUrl} alt={description} />
   );
 };
 
-export default PhotoGridItem;
+export default PhotoItem;

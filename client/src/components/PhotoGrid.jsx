@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PhotoGridItem from './PhotoGridItem.jsx';
+import PhotoItem from './PhotoItem.jsx';
 
 
 const PhotoGrid = (props) => {
   const [photos, setPhotos] = useState([]);
   const {listingId} = props;
 
-  useEffect( () => {
-    console.log('component loaded');
-    // setPhotos(['hello', 'world'])
+  useEffect(() => {
     getPhotos(listingId);
   }, []);
 
   const getPhotos = (id) => {
-    axios.get(`/api/home/${30506101}/photos`)
+    axios.get(`/api/home/${id}/photos`)
       .then((response) => setPhotos(response.data[0].photos))
       .catch((error) => console.log(error));
   };
@@ -22,7 +20,7 @@ const PhotoGrid = (props) => {
   return (
     <div>
       {/* {console.log(photos)} */}
-      {photos.map((photo, index) => <PhotoGridItem photo={photo} />)}
+      {photos.map((photo, index) => <PhotoItem photo={photo}/>)}
     </div>
   );
 };
