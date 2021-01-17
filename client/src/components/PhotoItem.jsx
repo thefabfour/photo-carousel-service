@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 const PhotoItem = (props) => {
-  const { thumbnailUrl, imageUrl, description } = props.photo;
+  const { photo } = props;
+  const { thumbnailUrl, imageUrl, description } = photo;
 
   // useEffect( () => {
   //   console.log('item loaded')

@@ -19,8 +19,7 @@ const PhotoGrid = (props) => {
 
   return (
     <div>
-      {/* {console.log(photos)} */}
-      {photos.map((photo, index) => <PhotoItem photo={photo}/>)}
+      {photos.slice(0, 5).map((photo) => <PhotoItem photo={photo} key={photo.id} />)}
     </div>
   );
 };
