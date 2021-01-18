@@ -5,7 +5,7 @@ import PhotoItem from '../PhotoItem/PhotoItem.jsx';
 import Button from '../Button/Button.jsx';
 
 
-const PhotoGrid = (props) => {
+function PhotoGrid(props) {
   const [photos, setPhotos] = useState([]);
   const {listingId} = props;
 
@@ -22,9 +22,9 @@ const PhotoGrid = (props) => {
   return (
     <div>
       {photos.slice(0, 5).map((photo) => <PhotoItem photo={photo} key={photo.id} />)}
-      <Button />
+      <Button label="Show All Photos" />
     </div>
   );
-};
+}
 
 export default PhotoGrid;

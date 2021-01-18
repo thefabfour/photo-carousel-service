@@ -1,8 +1,15 @@
 import React from 'react';
 
-const Button = (props) => {
+function Button (props) {
+  const {label, children} = props;
 
-  return (<button></button>)
+  return (
+    <label></label>
+    <button>
+      {children}
+      {label}
+    </button>
+  );
 }
 
 export default Button;
