@@ -7,6 +7,7 @@ import Button from '../Button/Button.jsx';
 
 function PhotoGrid(props) {
   const [photos, setPhotos] = useState([]);
+  const [selectedPhoto, setSelectedPhoto] = useState({});
   const {listingId} = props;
 
   useEffect(() => {
@@ -22,7 +23,7 @@ function PhotoGrid(props) {
   return (
     <div>
       {photos.slice(0, 5).map((photo) => <PhotoItem photo={photo} key={photo.id} />)}
-      <Button label="Show All Photos" />
+      <Button>Show All Photos</Button>
     </div>
   );
 }

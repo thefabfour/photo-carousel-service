@@ -1,13 +1,12 @@
 import React from 'react';
 
 function Button (props) {
-  const {label, children} = props;
+  const {children} = props;
 
   return (
     <label></label>
     <button>
       {children}
-      {label}
     </button>
   );
 }
