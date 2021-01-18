@@ -25,7 +25,9 @@ function PhotoGrid(props) {
   return (
     <div>
       {photos.slice(0, 5).map((photo) => <PhotoItem photo={photo} key={photo.id} />)}
-      <Button>Show All Photos</Button>
+      <Button setSelectedPhoto={setSelectedPhoto}>
+        Show All Photos
+      </Button>
     </div>
   );
 }

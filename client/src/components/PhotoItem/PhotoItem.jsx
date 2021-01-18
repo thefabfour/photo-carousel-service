@@ -6,15 +6,20 @@ function PhotoItem (props) {
   const { photo } = props;
   const { id, thumbnailUrl, imageUrl, description } = photo;
 
-  //onClick handler
+  const handleClick = (event) => {
+    console.log('it works!')
+  };
 
   return (
-    <img
-      src={thumbnailUrl}
-      alt={description}
-      photo-id={id}
-      className={classes.img}
-    />
+    <button type="button" onClick={handleClick}>
+      <img
+        src={thumbnailUrl}
+        alt={description}
+        photo-id={id}
+        className={classes.img}
+      />
+    </button>
+
   );
 }
 
