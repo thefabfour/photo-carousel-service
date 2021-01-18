@@ -3,8 +3,9 @@
   display: flex;
   border: 0 none rgba(0, 0, 0, 0);
   overflow: hidden;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
   padding: 0;
+  /* background-color: black; */
 }
 
 .photo{
@@ -14,6 +15,7 @@
 }
 
 .photoitemleft {
+  height: inherit;
   border-top-left-radius: .75rem;
   border-bottom-left-radius: .75rem;
 }

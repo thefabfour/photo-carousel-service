@@ -17,7 +17,12 @@ function PhotoItem (props) {
         src={thumbnailUrl}
         alt={description}
         photo-id={id}
-        className={classes.photo}
+        className={
+          `${classes.photo}
+          ${id === 1 ? classes.photoitemleft : ''}
+          ${id === 4 ? classes.photoitemtopright : ''}
+          ${id === 5 ? classes.photoitembottomright : ''}`
+        }
       />
     </button>
   );

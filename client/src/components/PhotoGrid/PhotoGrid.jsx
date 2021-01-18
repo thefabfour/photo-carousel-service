@@ -10,6 +10,8 @@ import Button from '../Button/Button.jsx';
 function PhotoGrid(props) {
   const [photos, setPhotos] = useState([]);
   const [selectedPhoto, setSelectedPhoto] = useState({});
+
+  const photosLoaded = photos.length > 0;
   const {listingId} = props;
 
   useEffect(() => {
@@ -23,14 +25,27 @@ function PhotoGrid(props) {
   };
 
   return (
-    <div className={classes.photogrid} >
-      {photos.slice(0, 5).map((photo) => (
+    <div className={classes.photogrid}>
+      {/* {photos.slice(0, 5).map((photo) => (
         <PhotoItem
           photo={photo}
           setSelectedPhoto={setSelectedPhoto}
           key={photo.id}
         />
-      ))}
+      ))} */}
+      <div className={classes.left}>
+        {photosLoaded ? <PhotoItem photo={photos[0]} setSelectedPhoto={setSelectedPhoto} /> : null}
+      </div>
+      <div className={classes.right}>
+        <div className={classes.upperright}>
+          {photosLoaded ? <PhotoItem photo={photos[1]} setSelectedPhoto={setSelectedPhoto} /> : null}
+          {photosLoaded ? <PhotoItem photo={photos[3]} setSelectedPhoto={setSelectedPhoto} /> : null}
+        </div>
+        <div className={classes.lowerright}>
+          {photosLoaded ? <PhotoItem photo={photos[2]} setSelectedPhoto={setSelectedPhoto} /> : null}
+          {photosLoaded ? <PhotoItem photo={photos[4]} setSelectedPhoto={setSelectedPhoto} /> : null}
+        </div>
+      </div>
       <Button>
         Show All Photos
       </Button>

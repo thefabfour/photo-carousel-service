@@ -1,0 +1,7 @@
+.btn{
+  border: .25rem solid var(--black);
+  border-radius: .5rem;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  padding: .25rem;
+}

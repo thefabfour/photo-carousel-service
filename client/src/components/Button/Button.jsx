@@ -7,7 +7,7 @@ function Button (props) {
   const {children} = props;
 
   return (
-    <button type="button">
+    <button type="button" className={classes.btn}>
       {children}
     </button>
   );
