@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import PhotoItem from './PhotoItem.jsx';
-import Button from './Button.jsx';
+import PhotoItem from '../PhotoItem/PhotoItem.jsx';
+import Button from '../Button/Button.jsx';
 
 
 const PhotoGrid = (props) => {
