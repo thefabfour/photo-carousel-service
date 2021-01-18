@@ -1,0 +1,27 @@
+.photoitem{
+  object-fit: cover;
+  display: flex;
+  border: 0 none rgba(0, 0, 0, 0);
+  overflow: hidden;
+  border-radius: 1rem;
+  padding: 0;
+}
+
+.photo{
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+}
+
+.photoitemleft {
+  border-top-left-radius: .75rem;
+  border-bottom-left-radius: .75rem;
+}
+
+.photoitemtopright {
+  border-top-right-radius: .75rem;
+}
+
+.photoitembottomright {
+  border-bottom-right-radius: .75rem;
+}

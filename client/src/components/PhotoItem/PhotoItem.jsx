@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classes from './PhotoItem.module.css';
 
@@ -11,16 +12,19 @@ function PhotoItem (props) {
   };
 
   return (
-    <button type="button" onClick={handleClick}>
+    <button type="button" onClick={handleClick} className={classes.photoitem}>
       <img
         src={thumbnailUrl}
         alt={description}
         photo-id={id}
-        className={classes.img}
+        className={classes.photo}
       />
     </button>
-
   );
 }
 
 export default PhotoItem;
+
+PhotoItem.propTypes = {
+  photo: PropTypes.object.isRequired,
+};

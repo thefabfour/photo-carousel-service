@@ -1,0 +1,7 @@
+.photogrid {
+  margin: 2.4rem 8rem 0 20rem;
+  grid-template-rows: 40rem 40rem;
+  grid-template-columns: 40rem 40rem;
+  column-gap: .5rem;
+  row-gap: .5rem;
+}
