@@ -6,6 +6,7 @@ import classes from './PhotoGrid.module.css';
 import PhotoItem from '../PhotoItem/PhotoItem.jsx';
 import Button from '../Button/Button.jsx';
 import Modal from '../Modal/Modal.jsx';
+import PhotoViewer from '../PhotoViewer/PhotoViewer.jsx';
 
 function PhotoGrid(props) {
   const [photos, setPhotos] = useState([]);
@@ -63,15 +64,22 @@ function PhotoGrid(props) {
         </div>
       </div>
 
-      <Button type="allphotos">
+      <Button type="allphotos" modalOpen={modalOpen} setModalOpen={setModalOpen}>
         Show All Photos
       </Button>
 
       <Modal modalOpen={modalOpen}>
-        <Button modalOpen={modalOpen} setModalOpen={setModalOpen}>Close</Button>
+        <PhotoViewer
+          modalOpen={modalOpen}
+          setModalOpen={setModalOpen}
+          selectedPhoto={selectedPhoto}
+          setSelectedPhoto={setSelectedPhoto}
+          photos={photos}
+        />
+        {/* <Button modalOpen={modalOpen} setModalOpen={setModalOpen}>Close</Button>
         <span>{`${selectedPhoto.id} / ${photos.length}`}</span>
         <img src={selectedPhoto.imageUrl} alt={selectedPhoto.description} />
-        <span>{selectedPhoto.description}</span>
+        <span>{selectedPhoto.description}</span> */}
       </Modal>
     </div>
   );

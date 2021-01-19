@@ -9,7 +9,7 @@ function Button (props) {
   const handleClick = () => {
     console.log('clicked', setModalOpen)
     const toggleValue = !modalOpen;
-    // setModalOpen(toggleValue);
+    setModalOpen(toggleValue);
   };
 
   return (
