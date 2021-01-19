@@ -1,4 +1,4 @@
-.photoitem{
+.photobtn{
   object-fit: cover;
   display: flex;
   border: 0 none rgba(0, 0, 0, 0);
@@ -12,18 +12,28 @@
   height: inherit;
   width: inherit;
   object-fit: cover;
+  -webkit-filter: brightness(100%);
+}
+
+.photo:hover {
+  -webkit-filter: brightness(82%);
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 .photoitemleft {
   height: inherit;
-  border-top-left-radius: .75rem;
-  border-bottom-left-radius: .75rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 .photoitemtopright {
-  border-top-right-radius: .75rem;
+  border-top-right-radius: 1rem;
 }
 
 .photoitembottomright {
-  border-bottom-right-radius: .75rem;
+  border-bottom-right-radius: 1rem;
 }

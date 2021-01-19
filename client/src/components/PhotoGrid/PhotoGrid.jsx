@@ -13,6 +13,12 @@ function PhotoGrid(props) {
 
   const photosLoaded = photos.length > 0;
   const {listingId} = props;
+  const allPhotosButtonStyle = {
+    position: 'absolute',
+    top: '100%',
+    left: '100%',
+    transform: 'translate(-100%, -100%)',
+  }
 
   useEffect(() => {
     getPhotos(listingId);
@@ -46,13 +52,8 @@ function PhotoGrid(props) {
           {photosLoaded ? <PhotoItem photo={photos[4]} setSelectedPhoto={setSelectedPhoto} /> : null}
         </div>
       </div>
-      <Button style={{
-        position: 'absolute',
-        top: '100%',
-        left: '100%',
-        transform: 'translate(-100%, -100%)',
-      }}
-      >
+
+      <Button style={allPhotosButtonStyle}>
         Show All Photos
       </Button>
     </div>
