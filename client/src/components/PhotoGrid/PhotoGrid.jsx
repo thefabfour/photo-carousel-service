@@ -46,7 +46,13 @@ function PhotoGrid(props) {
           {photosLoaded ? <PhotoItem photo={photos[4]} setSelectedPhoto={setSelectedPhoto} /> : null}
         </div>
       </div>
-      <Button>
+      <Button style={{
+        position: 'absolute',
+        top: '100%',
+        left: '100%',
+        transform: 'translate(-100%, -100%)',
+      }}
+      >
         Show All Photos
       </Button>
     </div>

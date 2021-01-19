@@ -1,20 +1,14 @@
 .photogrid {
-  /* margin: 0; */
   margin: 2.4rem 8rem 0 20rem;
-  /* grid-template-rows: 40rem 40rem;
-  grid-template-columns: 40rem 40rem;
-  column-gap: .5rem;
-  row-gap: .5rem; */
   display: flex;
   flex-direction: row;
   height: 40vh;
+  overflow: hidden;
+  /* Added for temporary visibility */
+  background-color: lightsalmon;
 }
 
 .left{
-  display: flex;
-  flex-direction: column;
-  flex-grow: 2;
-  align-items: stretch;
   height: 100%;
   width: 50%;
 }

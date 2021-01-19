@@ -26,6 +26,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.14.0"
   },
