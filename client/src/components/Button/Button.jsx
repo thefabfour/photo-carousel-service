@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import classes from './Button.module.css';
 
 function Button (props) {
-  const {children, type, modalOpen, setModalOpen} = props;
+  const { children, type, modalOpen, setModalOpen } = props;
 
   const handleClick = () => {
-    console.log('clicked')
+    console.log('clicked', setModalOpen)
     const toggleValue = !modalOpen;
-    setModalOpen(toggleValue);
+    // setModalOpen(toggleValue);
   };
 
   return (

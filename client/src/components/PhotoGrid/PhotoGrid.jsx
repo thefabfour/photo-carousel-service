@@ -28,6 +28,8 @@ function PhotoGrid(props) {
     getPhotos(listingId);
   }, []);
 
+  // const test = () => console.log('Made it!'); //! THIS CAN BE REMOVED
+
   return (
     <div className={classes.photogrid}>
       {/* {photos.slice(0, 5).map((photo) => (
@@ -67,9 +69,9 @@ function PhotoGrid(props) {
 
       <Modal modalOpen={modalOpen}>
         <Button modalOpen={modalOpen} setModalOpen={setModalOpen}>Close</Button>
-        {`${selectedPhoto.id} / ${photos.length}`}
+        <span>{`${selectedPhoto.id} / ${photos.length}`}</span>
         <img src={selectedPhoto.imageUrl} alt={selectedPhoto.description} />
-        {selectedPhoto.description}
+        <span>{selectedPhoto.description}</span>
       </Modal>
     </div>
   );
