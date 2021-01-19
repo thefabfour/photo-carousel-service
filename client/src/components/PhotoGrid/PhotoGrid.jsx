@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { CgLayoutGridSmall } from 'react-icons/cg';
 
 import classes from './PhotoGrid.module.css';
 
@@ -65,6 +66,7 @@ function PhotoGrid(props) {
       </div>
 
       <Button type="allphotos" modalOpen={modalOpen} setModalOpen={setModalOpen}>
+        <CgLayoutGridSmall className={classes.icon} />
         Show All Photos
       </Button>
 

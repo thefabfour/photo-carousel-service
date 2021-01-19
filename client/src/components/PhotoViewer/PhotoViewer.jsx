@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IoMdClose, IoShareOutline, IoMdHeartEmpty, IoIosArrowBack, IoIosArrowForward } from 'react-icons';
+import { IoMdClose, IoShareOutline, IoMdHeartEmpty, IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 import classes from './PhotoViewer.module.css';
 
@@ -22,6 +22,7 @@ function PhotoViewer(props) {
         setModalOpen={setModalOpen}
         className={classes.closebtn}
       >
+        <IoMdClose />
         Close
       </Button>
       <span className={classes.text}>{`${selectedPhoto.id} / ${photos.length}`}</span>
