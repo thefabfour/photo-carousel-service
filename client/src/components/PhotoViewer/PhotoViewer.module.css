@@ -1,0 +1,13 @@
+.viewer {
+  position: relative;
+}
+
+.closebtn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.text {
+  font-size: 1.5rem;
+}

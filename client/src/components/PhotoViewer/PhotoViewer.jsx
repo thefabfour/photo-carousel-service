@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { IoMdClose, IoShareOutline, IoMdHeartEmpty, IoIosArrowBack, IoIosArrowForward } from 'react-icons';
 
 import classes from './PhotoViewer.module.css';
+
+import Button from '../Button/Button.jsx';
 
 function PhotoViewer(props) {
   const {
@@ -13,11 +16,17 @@ function PhotoViewer(props) {
   } = props;
 
   return (
-    <div>
-      <Button modalOpen={modalOpen} setModalOpen={setModalOpen}>Close</Button>
-      <span>{`${selectedPhoto.id} / ${photos.length}`}</span>
+    <div className={classes.viewer}>
+      <Button
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
+        className={classes.closebtn}
+      >
+        Close
+      </Button>
+      <span className={classes.text}>{`${selectedPhoto.id} / ${photos.length}`}</span>
       <img src={selectedPhoto.imageUrl} alt={selectedPhoto.description} />
-      <span>{selectedPhoto.description}</span>
+      <span className={classes.text}>{selectedPhoto.description}</span>
     </div>
   );
 }
