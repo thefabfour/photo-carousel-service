@@ -1,0 +1,15 @@
+.btn{
+  padding: .1rem 1rem;
+  border: .1rem solid var(--black);
+  border-radius: .5rem;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  height: 3rem;
+}
+
+.allphotos {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-100%, -100%);
+}

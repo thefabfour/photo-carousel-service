@@ -1,0 +1,40 @@
+.photogrid {
+  margin: 2.4rem 8rem 0 20rem;
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  overflow: hidden;
+  border: .25rem dashed red;
+}
+
+.left{
+  height: 100%;
+  width: 50%;
+  padding-right: .5rem;
+  border: .25rem dashed blueviolet;
+}
+
+.right{
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  width: 50%;
+  padding-left: .5rem;
+  border: .25rem dashed green;
+}
+
+.upperright{
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  padding-bottom: .5rem;
+  border: .25rem dashed yellow;
+}
+
+.lowerright{
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  padding-top: .5rem;
+  border: .25rem dashed orange;
+}
