@@ -23,4 +23,6 @@ export default Button;
 
 Button.propTypes = {
   children: PropTypes.string.isRequired,
+  modalOpen: PropTypes.bool.isRequired,
+  setModalOpen: PropTypes.func.isRequired,
 };
