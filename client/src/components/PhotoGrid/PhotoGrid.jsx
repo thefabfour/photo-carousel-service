@@ -15,10 +15,6 @@ function PhotoGrid(props) {
   const photosLoaded = photos.length > 0;
   const {listingId} = props;
 
-  useEffect(() => {
-    getPhotos(listingId);
-  }, []);
-
   const getPhotos = (id) => {
     axios.get(`/api/home/${id}/photos`)
       .then((response) => {
@@ -27,6 +23,10 @@ function PhotoGrid(props) {
       })
       .catch((error) => console.log(error));
   };
+
+  useEffect(() => {
+    getPhotos(listingId);
+  }, []);
 
   return (
     <div className={classes.photogrid}>

@@ -8,11 +8,12 @@ function Modal(props) {
 
   useEffect(() => {
     const newStyle = modalOpen ? 'modelopen' : 'modelclose';
+    console.log(newStyle)
     setModalStyle(newStyle);
   }, [modalOpen]);
 
   return (
-    <div className={`${classes.modal} ${modalStyle}`}>
+    <div className={`${classes.modal} ${classes[modalStyle]}`}>
       {children}
       {`Open: ${modalOpen} ${modalStyle}`}
     </div>
