@@ -4,10 +4,16 @@ import PropTypes from 'prop-types';
 import classes from './Button.module.css';
 
 function Button (props) {
-  const {children, type} = props;
+  const {children, type, modalOpen, setModalOpen} = props;
+
+  const handleClick = () => {
+    console.log('clicked')
+    const toggleValue = !modalOpen;
+    setModalOpen(toggleValue);
+  };
 
   return (
-    <button type="button" className={`${classes.btn} ${classes[type]}`}>
+    <button type="button" className={`${classes.btn} ${classes[type]}`} onClick={handleClick}>
       {children}
     </button>
   );

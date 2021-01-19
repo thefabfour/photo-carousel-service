@@ -5,10 +5,12 @@ import classes from './PhotoGrid.module.css';
 
 import PhotoItem from '../PhotoItem/PhotoItem.jsx';
 import Button from '../Button/Button.jsx';
+import Modal from '../Modal/Modal.jsx';
 
 function PhotoGrid(props) {
   const [photos, setPhotos] = useState([]);
   const [selectedPhoto, setSelectedPhoto] = useState({});
+  const [modalOpen, setModalOpen] = useState(false);
 
   const photosLoaded = photos.length > 0;
   const {listingId} = props;
@@ -19,7 +21,10 @@ function PhotoGrid(props) {
 
   const getPhotos = (id) => {
     axios.get(`/api/home/${id}/photos`)
-      .then((response) => setPhotos(response.data[0].photos))
+      .then((response) => {
+        setPhotos(response.data[0].photos);
+        setSelectedPhoto(response.data[0].photos[0]);
+      })
       .catch((error) => console.log(error));
   };
 
@@ -59,6 +64,13 @@ function PhotoGrid(props) {
       <Button type="allphotos">
         Show All Photos
       </Button>
+
+      <Modal modalOpen={modalOpen}>
+        <Button modalOpen={modalOpen} setModalOpen={setModalOpen}>Close</Button>
+        {`${selectedPhoto.id} / ${photos.length}`}
+        <img src={selectedPhoto.imageUrl} alt={selectedPhoto.description} />
+        {selectedPhoto.description}
+      </Modal>
     </div>
   );
 }

@@ -4,14 +4,14 @@
   flex-direction: row;
   height: 50vh;
   overflow: hidden;
-  border: .25rem dashed red;
+  /* border: .25rem dashed red; */
 }
 
 .left{
   height: 100%;
   width: 50%;
   padding-right: .5rem;
-  border: .25rem dashed blueviolet;
+  /* border: .25rem dashed blueviolet; */
 }
 
 .right{
@@ -20,7 +20,7 @@
   height: inherit;
   width: 50%;
   padding-left: .5rem;
-  border: .25rem dashed green;
+  /* border: .25rem dashed green; */
 }
 
 .upperright{
@@ -28,7 +28,7 @@
   flex-direction: row;
   height: 50%;
   padding-bottom: .5rem;
-  border: .25rem dashed yellow;
+  /* border: .25rem dashed yellow; */
 }
 
 .lowerright{
@@ -36,5 +36,5 @@
   flex-direction: row;
   height: 50%;
   padding-top: .5rem;
-  border: .25rem dashed orange;
+  /* border: .25rem dashed orange; */
 }

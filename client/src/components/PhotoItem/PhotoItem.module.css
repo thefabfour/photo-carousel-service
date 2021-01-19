@@ -1,5 +1,7 @@
 .photobtn{
   object-fit: cover;
+  width: 100%;
+  height: 100%;
   display: flex;
   border: 0 none rgba(0, 0, 0, 0);
   overflow: hidden;
@@ -26,7 +28,7 @@
 
 .photoitemleft {
   height: inherit;
-  border-top-left-radius: 1rem;
+  border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1rem;
 }
 
