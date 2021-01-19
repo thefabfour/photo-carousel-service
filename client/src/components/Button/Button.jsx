@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import classes from './Button.module.css';
 
 function Button (props) {
-  const {children} = props;
+  const {children, type} = props;
 
   return (
-    <button type="button" className={classes.btn}>
+    <button type="button" className={`${classes.btn} ${classes[type]}`}>
       {children}
     </button>
   );

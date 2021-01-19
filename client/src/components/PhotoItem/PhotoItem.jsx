@@ -5,7 +5,9 @@ import classes from './PhotoItem.module.css';
 
 function PhotoItem (props) {
   const { photo } = props;
-  const { id, thumbnailUrl, imageUrl, description } = photo;
+  const {
+    id, thumbnailUrl, imageUrl, description,
+  } = photo;
   const assignedClasses = () => (`${classes.photo}
           ${id === 1 ? classes.photoitemleft : ''}
           ${id === 4 ? classes.photoitemtopright : ''}
@@ -22,7 +24,7 @@ function PhotoItem (props) {
         src={thumbnailUrl}
         alt={description}
         photo-id={id}
-        className={assignedClasses}
+        className={assignedClasses()}
       />
     </button>
   );
