@@ -6,11 +6,11 @@
   height: 100vh;
   background-color: rgb(255, 255, 255);
   z-index: 100;
-  padding: 3rem;
+  padding: 4rem;
   backface-visibility: hidden;
 }
 
-.modelopen {
+.modalopen {
   transform: translateY(0);
   opacity: 1;
   /* animation-name: openModal .4s ease-out; */
@@ -27,7 +27,7 @@
   }
 }
 
-.modelclose {
+.modalclose {
   transform: translateY(100vh);
   opacity: 0;
   /* animation: closeModal .4s ease-out; */

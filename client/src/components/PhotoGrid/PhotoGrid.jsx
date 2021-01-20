@@ -30,40 +30,62 @@ function PhotoGrid(props) {
     getPhotos(listingId);
   }, []);
 
-  // const test = () => console.log('Made it!'); //! THIS CAN BE REMOVED
+  // const test = () => console.log('Made it!'); //! THIS WILL BE REMOVED
 
   return (
     <div className={classes.photogrid}>
-      {/* {photos.slice(0, 5).map((photo) => (
+      {/* {photos.slice(0, 5).map((photo) => ( //!THIS SECTION WILL BE REMOVED
         <PhotoItem
           photo={photo}
           setSelectedPhoto={setSelectedPhoto}
           key={photo.id}
-        />
+        /> //! END REMOVE SECTION
       ))} */}
-      <div className={classes.left}>
-        {photosLoaded
-          ? <PhotoItem photo={photos[0]} setSelectedPhoto={setSelectedPhoto} setModalOpen={setModalOpen} />
-          : null}
-      </div>
-      <div className={classes.right}>
-        <div className={classes.upperright}>
-          {photosLoaded
-            ? <PhotoItem photo={photos[1]} setSelectedPhoto={setSelectedPhoto} setModalOpen={setModalOpen} />
-            : null}
-          {photosLoaded
-            ? <PhotoItem photo={photos[3]} setSelectedPhoto={setSelectedPhoto} setModalOpen={setModalOpen} />
-            : null}
-        </div>
-        <div className={classes.lowerright}>
-          {photosLoaded
-            ? <PhotoItem photo={photos[2]} setSelectedPhoto={setSelectedPhoto} setModalOpen={setModalOpen} />
-            : null}
-          {photosLoaded
-            ? <PhotoItem photo={photos[4]} setSelectedPhoto={setSelectedPhoto} setModalOpen={setModalOpen} />
-            : null}
-        </div>
-      </div>
+      {photosLoaded
+        ? (
+          <div className={classes.left}>
+            {photosLoaded
+              ? (
+                <PhotoItem
+                  photo={photos[0]}
+                  setSelectedPhoto={setSelectedPhoto}
+                  setModalOpen={setModalOpen}
+                />
+              )
+              : null}
+          </div>
+        )
+        : null}
+      {photosLoaded
+        ? (
+          <div className={classes.right}>
+            <div className={classes.upperright}>
+              <PhotoItem
+                photo={photos[1]}
+                setSelectedPhoto={setSelectedPhoto}
+                setModalOpen={setModalOpen}
+              />
+              <PhotoItem
+                photo={photos[3]}
+                setSelectedPhoto={setSelectedPhoto}
+                setModalOpen={setModalOpen}
+              />
+            </div>
+            <div className={classes.lowerright}>
+              <PhotoItem
+                photo={photos[2]}
+                setSelectedPhoto={setSelectedPhoto}
+                setModalOpen={setModalOpen}
+              />
+              <PhotoItem
+                photo={photos[4]}
+                setSelectedPhoto={setSelectedPhoto}
+                setModalOpen={setModalOpen}
+              />
+            </div>
+          </div>
+        )
+        : null}
 
       <Button type="allphotos" modalOpen={modalOpen} setModalOpen={setModalOpen}>
         <CgLayoutGridSmall className={classes.icon} />

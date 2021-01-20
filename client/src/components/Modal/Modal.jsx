@@ -5,7 +5,7 @@ import classes from './Modal.module.css';
 
 function Modal(props) {
   const { modalOpen, children } = props;
-  const modalStyle = modalOpen ? 'modelopen' : 'modelclose';
+  const modalStyle = modalOpen ? 'modalopen' : 'modalclose';
 
   return (
     <div className={`${classes.modal} ${classes[modalStyle]}`}>
