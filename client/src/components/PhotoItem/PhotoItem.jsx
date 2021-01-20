@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import classes from './PhotoItem.module.css';
 
-function PhotoItem (props) {
-  const { photo } = props;
+function PhotoItem(props) {
+  const { photo, setSelectedPhoto, setModalOpen } = props;
   const {
     id, thumbnailUrl, imageUrl, description,
   } = photo;
@@ -14,8 +14,8 @@ function PhotoItem (props) {
           ${id === 5 ? classes.photoitembottomright : ''}`);
 
   const handleClick = (event) => {
-    console.log('it works!')
-    // TODO modal toggle functionality will be implemented here
+    setSelectedPhoto(photo);
+    setModalOpen(true);
   };
 
   return (
@@ -34,4 +34,5 @@ export default PhotoItem;
 
 PhotoItem.propTypes = {
   photo: PropTypes.object.isRequired,
+  setSelectedPhoto: PropTypes.func.isRequired,
 };
