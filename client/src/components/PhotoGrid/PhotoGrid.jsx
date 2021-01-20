@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import { CgLayoutGridSmall } from 'react-icons/cg';
 
 import classes from './PhotoGrid.module.css';
 
-import PhotoItem from '../PhotoItem/PhotoItem.jsx';
-import Button from '../Button/Button.jsx';
-import Modal from '../Modal/Modal.jsx';
-import PhotoViewer from '../PhotoViewer/PhotoViewer.jsx';
+import PhotoItem from '../PhotoItem/PhotoItem';
+import Button from '../Button/Button';
+import Modal from '../Modal/Modal';
+import PhotoViewer from '../PhotoViewer/PhotoViewer';
 
 function PhotoGrid(props) {
   const [photos, setPhotos] = useState([]);
@@ -30,17 +31,9 @@ function PhotoGrid(props) {
     getPhotos(listingId);
   }, []);
 
-  // const test = () => console.log('Made it!'); //! THIS WILL BE REMOVED
-
   return (
     <div className={classes.photogrid}>
-      {/* {photos.slice(0, 5).map((photo) => ( //!THIS SECTION WILL BE REMOVED
-        <PhotoItem
-          photo={photo}
-          setSelectedPhoto={setSelectedPhoto}
-          key={photo.id}
-        /> //! END REMOVE SECTION
-      ))} */}
+
       {photosLoaded
         ? (
           <div className={classes.left}>
@@ -100,13 +93,13 @@ function PhotoGrid(props) {
           setSelectedPhoto={setSelectedPhoto}
           photos={photos}
         />
-        {/* <Button modalOpen={modalOpen} setModalOpen={setModalOpen}>Close</Button>
-        <span>{`${selectedPhoto.id} / ${photos.length}`}</span>
-        <img src={selectedPhoto.imageUrl} alt={selectedPhoto.description} />
-        <span>{selectedPhoto.description}</span> */}
       </Modal>
     </div>
   );
 }
 
 export default PhotoGrid;
+
+PhotoItem.propTypes = {
+  listingId: PropTypes.string.isRequired,
+};

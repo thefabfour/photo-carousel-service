@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IoMdClose, IoMdHeartEmpty, IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { IoShareOutline } from "react-icons/io5";
+import {
+  IoMdClose,
+  IoMdHeartEmpty,
+  IoIosArrowBack,
+  IoIosArrowForward,
+} from 'react-icons/io';
+import { IoShareOutline } from 'react-icons/io5';
 
 import classes from './PhotoViewer.module.css';
 
-import Button from '../Button/Button.jsx';
+import Button from '../Button/Button';
 
 function PhotoViewer(props) {
   const {
