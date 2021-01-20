@@ -18,6 +18,6 @@ function Modal(props) {
 export default Modal;
 
 Modal.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.node.isRequired,
   modalOpen: PropTypes.bool.isRequired,
 };
