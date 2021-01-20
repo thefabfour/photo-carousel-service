@@ -34,4 +34,5 @@ export default PhotoItem;
 
 PhotoItem.propTypes = {
   photo: PropTypes.object.isRequired,
+  setSelectedPhoto: PropTypes.func.isRequired,
 };
