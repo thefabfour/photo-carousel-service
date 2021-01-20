@@ -1,20 +1,27 @@
 const express = require('express');
 const path = require('path');
-const db = require('../database/index.js');
+const { PhotoCollection, db, getPhotos } = require('../database/index.js');
 
 const app = express();
 const PORT = 3000;
-const PUBLIC_DIR = path.resolve(__dirname, 'public');
+const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 
-app.use(express.json);
+app.use(express.json());
 
 app.use('/', (req, res, next) => {
   // eslint-disable-next-line no-console
-  console.log(`${req.method} received on ${req.path}`);
+  console.log(`HTTP ${req.method} received on ${req.path}`);
   next();
 });
 
 app.use(express.static(PUBLIC_DIR));
+
+app.get('/api/home/:id/photos', (req, res) => {
+  const { id } = req.params;
+  getPhotos(id)
+    .then((results) => res.send(results).status(200))
+    .catch(() => res.status(500));
+});
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
