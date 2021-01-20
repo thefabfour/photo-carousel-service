@@ -64,18 +64,6 @@ function PhotoViewer(props) {
           <p className={classes.text}>{selectedPhoto.description}</p>
         </div>
       </div>
-
-      {/* <Button
-        modalOpen={modalOpen}
-        setModalOpen={setModalOpen}
-        className={classes.closebtn}
-      >
-        <IoMdClose />
-        Close
-      </Button>
-      <span className={classes.text}>{`${selectedPhoto.id} / ${photos.length}`}</span>
-      <img src={selectedPhoto.imageUrl} alt={selectedPhoto.description} />
-      <span className={classes.text}>{selectedPhoto.description}</span> */}
     </div>
   );
 }
