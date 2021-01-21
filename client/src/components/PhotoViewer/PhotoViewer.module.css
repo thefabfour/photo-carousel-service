@@ -7,7 +7,6 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-content: space-between;
-  /* border: .1rem dashed red; */
 }
 
 .top {
@@ -29,7 +28,6 @@
 }
 
 .centerhorizontal {
-  /* border: .1rem dashed black; */
   display: flex;
   flex-direction: column;
   justify-content: center;

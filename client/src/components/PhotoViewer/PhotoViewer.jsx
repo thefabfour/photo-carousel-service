@@ -18,12 +18,12 @@ function PhotoViewer(props) {
     modalOpen, setModalOpen, selectedPhoto, setSelectedPhoto, photos,
   } = props;
 
-  const prevPhoto = (event) => {
+  const prevPhoto = () => {
     const newSelected = photos.find((photo) => photo.id === selectedPhoto.id - 1);
     setSelectedPhoto(newSelected);
   };
 
-  const nextPhoto = (event) => {
+  const nextPhoto = () => {
     const newSelected = photos.find((photo) => photo.id === selectedPhoto.id + 1);
     setSelectedPhoto(newSelected);
   };
@@ -57,7 +57,12 @@ function PhotoViewer(props) {
       {/* MIDDLE ROW */}
       <div className={`${classes.middle} ${classes.row}`}>
         <div className={classes.centerhorizontal}>
-          <IconButton border={true} large={true} handleClick={prevPhoto} isHidden={selectedPhoto.id === 1}>
+          <IconButton
+            border={true}
+            large={true}
+            handleClick={prevPhoto}
+            isHidden={selectedPhoto.id === 1}
+          >
             <IoIosArrowBack className={classes.icon} />
           </IconButton>
         </div>
@@ -69,7 +74,12 @@ function PhotoViewer(props) {
           />
         </div>
         <div className={classes.centerhorizontal}>
-          <IconButton border={true} large={true} handleClick={nextPhoto} isHidden={selectedPhoto.id === photos.length}>
+          <IconButton
+            border={true}
+            large={true}
+            handleClick={nextPhoto}
+            isHidden={selectedPhoto.id === photos.length}
+          >
             <IoIosArrowForward className={classes.icon} />
           </IconButton>
         </div>
