@@ -12,9 +12,16 @@ const photo = {
     room: 'Living Room',
   }
 
-describe('PhotoViewer', () => {
-  it('renders the PhotoViewer component', () => {
+// describe('PhotoViewer', () => {
+//   it('renders the PhotoViewer component', () => {
+//     render(<PhotoViewer modalOpen={false} setModalOpen={() => {}} selectedPhoto={photo} setSelectedPhoto={() => {}} photos={[photo]} />);
+//     screen.debug();
+//   })
+// })
+
+describe('PhotoViewer component exists', () => {
+  it('PhotoGrid component should exist in the document', () => {
     render(<PhotoViewer modalOpen={false} setModalOpen={() => {}} selectedPhoto={photo} setSelectedPhoto={() => {}} photos={[photo]} />);
-    screen.debug();
+    expect(document.querySelector('.viewer')).toBeInTheDocument();
   })
 })
