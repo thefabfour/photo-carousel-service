@@ -51,3 +51,8 @@
   height: inherit;
   width: inherit;
 }
+
+.icon {
+  height: 1.7rem;
+  width: 1.7rem;
+}

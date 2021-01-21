@@ -18,8 +18,14 @@ function PhotoViewer(props) {
     modalOpen, setModalOpen, selectedPhoto, setSelectedPhoto, photos,
   } = props;
 
-  const changePhoto = (index) => {
-    setSelectedPhoto(photos[index]);
+  const prevPhoto = (event) => {
+    const newSelected = photos.find((photo) => photo.id === selectedPhoto.id - 1);
+    setSelectedPhoto(newSelected);
+  };
+
+  const nextPhoto = (event) => {
+    const newSelected = photos.find((photo) => photo.id === selectedPhoto.id + 1);
+    setSelectedPhoto(newSelected);
   };
 
   return (
@@ -30,9 +36,9 @@ function PhotoViewer(props) {
           <Button
             modalOpen={modalOpen}
             setModalOpen={setModalOpen}
-            className={classes.closebtn}
+            type="closebtn"
           >
-            <IoMdClose />
+            <IoMdClose className={classes.icon} />
             Close
           </Button>
         </div>
@@ -40,22 +46,19 @@ function PhotoViewer(props) {
           <p className={classes.text}>{`${selectedPhoto.id} / ${photos.length}`}</p>
         </div>
         <div className={classes.row}>
-          {/* //TODO This will need to be changed to a button */}
           <IconButton border={false} large={false}>
-            <IoShareOutline />
+            <IoShareOutline className={classes.icon} />
           </IconButton>
-          {/* //TODO This will need to be changed to a button */}
           <IconButton border={false} large={false}>
-            <IoMdHeartEmpty />
+            <IoMdHeartEmpty className={classes.icon} />
           </IconButton>
         </div>
       </div>
       {/* MIDDLE ROW */}
       <div className={`${classes.middle} ${classes.row}`}>
         <div className={classes.centerhorizontal}>
-          {/* //TODO This will need props & clickHandler */}
-          <IconButton border={true} large={true}>
-            <IoIosArrowBack />
+          <IconButton border={true} large={true} handleClick={prevPhoto} isHidden={selectedPhoto.id === 1}>
+            <IoIosArrowBack className={classes.icon} />
           </IconButton>
         </div>
         <div className={classes.centerhorizontal}>
@@ -66,9 +69,8 @@ function PhotoViewer(props) {
           />
         </div>
         <div className={classes.centerhorizontal}>
-          {/* //TODO This will need to be changed to a button */}
-          <IconButton border={true} large={true}>
-            <IoIosArrowForward />
+          <IconButton border={true} large={true} handleClick={nextPhoto} isHidden={selectedPhoto.id === photos.length}>
+            <IoIosArrowForward className={classes.icon} />
           </IconButton>
         </div>
       </div>

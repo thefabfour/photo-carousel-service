@@ -10,7 +10,7 @@
 }
 
 .btn:hover {
-  background-color: #ff385d07;
+  background-color: #ff385d08;
   transition: -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s !important;
 }
 
@@ -34,5 +34,9 @@
   padding: .5rem;
   height: 5rem;
   width: 5rem;
+}
+
+.hidden {
+  display: none;
 }
 

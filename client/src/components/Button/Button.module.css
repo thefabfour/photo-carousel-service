@@ -1,12 +1,22 @@
 .btn{
-  padding: .1rem 1rem;
+  padding: .1rem 2rem;
   border: .1rem solid var(--black);
   border-radius: .5rem;
+  color: var(--black);
   background-color: rgb(255, 255, 255);
   font-size: 1.5rem;
   height: 3.25rem;
   overflow: hidden;
   cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.btn:active {
+  transform: scale(0.96);
 }
 
 .btn > {
@@ -18,4 +28,15 @@
   top: 100%;
   left: 100%;
   transform: translate(-115%, -155%);
+  min-width: fit-content;
+  white-space: nowrap;
+}
+
+.closebtn {
+  border: none;
+  background-color: rgba(34, 34, 34, 0.1);
+}
+
+.closebtn:hover {
+  background-color: rgba(34, 34, 34, 0.16);
 }
