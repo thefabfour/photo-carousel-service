@@ -1,0 +1,31 @@
+.btn {
+  border-radius: 2.5rem;
+  padding: .5rem;
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ff385d10;
+  transition: -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s !important;
+}
+
+.btn:active {
+  transform: scale(0.92);
+  outline: none;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.borderBtn {
+  border: .05rem solid var(--grey);
+}
+

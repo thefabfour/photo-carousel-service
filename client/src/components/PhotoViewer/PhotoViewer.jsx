@@ -11,6 +11,7 @@ import { IoShareOutline } from 'react-icons/io5';
 import classes from './PhotoViewer.module.css';
 
 import Button from '../Button/Button';
+import IconButton from '../IconButton/IconButton';
 
 function PhotoViewer(props) {
   const {
@@ -40,16 +41,22 @@ function PhotoViewer(props) {
         </div>
         <div>
           {/* //TODO This will need to be changed to a button */}
-          <IoShareOutline />
+          <IconButton border={false} large={false}>
+            <IoShareOutline />
+          </IconButton>
           {/* //TODO This will need to be changed to a button */}
-          <IoMdHeartEmpty />
+          <IconButton border={false} large={false}>
+            <IoMdHeartEmpty />
+          </IconButton>
         </div>
       </div>
       {/* MIDDLE ROW */}
       <div className={`${classes.middle} ${classes.row}`}>
         <div className={classes.centerhorizontal}>
-          {/* //TODO This will need to be changed to a button */}
-          <IoIosArrowBack />
+          {/* //TODO This will need props & clickHandler */}
+          <IconButton border={true} large={true}>
+            <IoIosArrowBack />
+          </IconButton>
         </div>
         <div className={classes.centerhorizontal}>
           <img
@@ -60,7 +67,9 @@ function PhotoViewer(props) {
         </div>
         <div className={classes.centerhorizontal}>
           {/* //TODO This will need to be changed to a button */}
-          <IoIosArrowForward />
+          <IconButton border={true} large={true}>
+            <IoIosArrowForward />
+          </IconButton>
         </div>
       </div>
       {/* BOTTOM ROW */}
