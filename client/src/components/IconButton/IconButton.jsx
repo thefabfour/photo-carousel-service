@@ -7,7 +7,9 @@ function IconButton(props) {
   const {
     children, type, border, large,
   } = props;
-  const assignedClasses= `${classes.btn} ${classes[type]} ${classes.borderBtn}`
+  const assignedClasses = `${classes.btn}
+    ${border ? classes.borderBtn : null}
+    ${large ? classes.large : classes.small}`;
 
   return (
     <button type="button" className={assignedClasses}>

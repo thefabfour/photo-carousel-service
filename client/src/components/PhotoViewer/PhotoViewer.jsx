@@ -15,12 +15,12 @@ import IconButton from '../IconButton/IconButton';
 
 function PhotoViewer(props) {
   const {
-    modalOpen,
-    setModalOpen,
-    selectedPhoto,
-    setSelectedPhoto,
-    photos,
+    modalOpen, setModalOpen, selectedPhoto, setSelectedPhoto, photos,
   } = props;
+
+  const changePhoto = (index) => {
+    setSelectedPhoto(photos[index]);
+  };
 
   return (
     <div className={`${classes.viewer}`}>
@@ -39,7 +39,7 @@ function PhotoViewer(props) {
         <div>
           <p className={classes.text}>{`${selectedPhoto.id} / ${photos.length}`}</p>
         </div>
-        <div>
+        <div className={classes.row}>
           {/* //TODO This will need to be changed to a button */}
           <IconButton border={false} large={false}>
             <IoShareOutline />
