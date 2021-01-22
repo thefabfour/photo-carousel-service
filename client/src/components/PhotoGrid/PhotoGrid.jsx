@@ -102,6 +102,6 @@ function PhotoGrid(props) {
 
 export default PhotoGrid;
 
-PhotoItem.propTypes = {
+PhotoGrid.propTypes = {
   listingId: PropTypes.string.isRequired,
 };
