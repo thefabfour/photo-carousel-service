@@ -6,7 +6,6 @@
   flex-direction: row;
   height: 50vh;
   overflow: hidden;
-  z-index: 0;
 }
 
 .left{
@@ -28,6 +27,13 @@
   flex-direction: row;
   height: 50%;
   padding-bottom: .4rem;
+}
+
+.btnContainer {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-115%, -155%);
 }
 
 button:first-child {
