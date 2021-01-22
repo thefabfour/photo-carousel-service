@@ -31,8 +31,8 @@ const photoListGenerator = () => {
 
 const photoGenerator = (photoId) => ({
   id: photoId,
-  imageUrl: `https://loremflickr.com/1200/880/house/all?lock=${photoId}`,
-  thumbnailUrl: `https://loremflickr.com/600/450/house/all?lock=${photoId}`,
+  imageUrl: `https://loremflickr.com/1200/880/houses/all?lock=${photoId}`,
+  thumbnailUrl: `https://loremflickr.com/600/450/houses/all?lock=${photoId}`,
   description: faker.lorem.sentence(),
   room: roomTypes[Math.floor(Math.random() * (roomTypes.length - 1))],
 });
