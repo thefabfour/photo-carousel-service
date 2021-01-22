@@ -48,7 +48,9 @@ button:first-child {
 }
 
 .icon {
-  margin: 0;
+  padding-right: 5rem;
   height: 100%;
   width: 100%;
+  background-color: blue;
+  flex-grow: 1;
 }

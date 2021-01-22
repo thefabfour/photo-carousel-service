@@ -82,7 +82,7 @@ function PhotoGrid(props) {
 
       <div className={classes.btnContainer}>
         <Button type="allphotos" modalOpen={modalOpen} setModalOpen={setModalOpen}>
-          <CgLayoutGridSmall className={classes.icon} />
+          <CgLayoutGridSmall />
           Show All Photos
         </Button>
       </div>

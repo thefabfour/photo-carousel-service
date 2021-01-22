@@ -1,5 +1,5 @@
 .btn{
-  padding: .1rem 3rem;
+  padding: .1rem 1rem .1rem .5rem;
   border: .1rem solid var(--black);
   border-radius: .5rem;
   color: var(--black);
@@ -24,14 +24,17 @@
 }
 
 .btn > svg {
-  padding-right: 1rem;
+  padding-right: .25rem;
   height: 100%;
-  width: 100%;
 }
 
 .allphotos {
   min-width: fit-content;
   white-space: nowrap;
+}
+
+.allphotos > svg {
+  width: 4rem;
 }
 
 .closebtn {
@@ -41,4 +44,8 @@
 
 .closebtn:hover {
   background-color: rgba(34, 34, 34, 0.16);
+}
+
+.closebtn > svg {
+  width: 2.5rem;
 }
