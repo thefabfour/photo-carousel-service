@@ -52,18 +52,18 @@
   transition: opacity .15s ease-out .3s;
 }
 
+.visible {
+  opacity: 100;
+  transition: opacity .1s linear 0s;
+}
+
 .fadeIn {
   opacity: 100;
   transition: opacity .45s ease-out .45s;
 }
 
-/* .toggleFade {
-  opacity: 100;
-  transition: opacity .45s ease-out .45s;
-} */
-
 .toggleFade {
-  animation: .5s phototransition 0s;
+  animation: .45s phototransition;
 }
 
 @keyframes phototransition {
