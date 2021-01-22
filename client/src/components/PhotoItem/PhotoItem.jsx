@@ -13,7 +13,7 @@ function PhotoItem(props) {
           ${id === 4 ? classes.photoitemtopright : ''}
           ${id === 5 ? classes.photoitembottomright : ''}`);
 
-  const handleClick = (event) => {
+  const handleClick = () => {
     setSelectedPhoto(photo);
     setModalOpen(true);
   };

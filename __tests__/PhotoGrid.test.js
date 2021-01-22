@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import userEvent from '@testing-library/user-event';
 
 import PhotoGrid from '../client/src/components/PhotoGrid/PhotoGrid'
 
@@ -19,6 +20,12 @@ describe('PhotoGrid component', () => {
   it('"Show All Photos" button should be visible', () => {
     render(<PhotoGrid listingId="30506101"/>);
     expect(screen.getByText('Show All Photos')).toBeInTheDocument();
+  })
+
+  it('"Show All Photos" button opens modal', () => {
+    render(<PhotoGrid listingId="30506101"/>);
+    userEvent.click(screen.getByText('Show All Photos'));
+    expect(document.getElementsByClassName('modal')[0]).toHaveClass('modalopen');
   })
 
 })
