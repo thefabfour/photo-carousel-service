@@ -27,8 +27,6 @@ function PhotoViewer(props) {
   useEffect(() => {
     setPhotoFade(classes.toggleFade);
     setTimeout(() => { setPhotoFade(classes.visible); }, 450);
-    // setPhotoFade('');
-    console.log('changed')//!REMOVE!!!!!!!!!!!!!!
   }, [selectedPhoto]);
 
   const prevPhoto = () => {

@@ -59,7 +59,7 @@
 
 .fadeIn {
   opacity: 100;
-  transition: opacity .45s ease-out .45s;
+  transition: opacity .45s ease-out .5s;
 }
 
 .toggleFade {

@@ -80,10 +80,12 @@ function PhotoGrid(props) {
         )
         : null}
 
-      <Button type="allphotos" modalOpen={modalOpen} setModalOpen={setModalOpen}>
-        <CgLayoutGridSmall className={classes.icon} />
-        Show All Photos
-      </Button>
+      <div style={{ transform: 'scale(1)' }}>
+        <Button type="allphotos" modalOpen={modalOpen} setModalOpen={setModalOpen}>
+          <CgLayoutGridSmall className={classes.icon} />
+          Show All Photos
+        </Button>
+      </div>
 
       <Modal modalOpen={modalOpen}>
         <PhotoViewer
