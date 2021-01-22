@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
   IoMdClose,
@@ -17,6 +17,18 @@ function PhotoViewer(props) {
   const {
     modalOpen, setModalOpen, selectedPhoto, setSelectedPhoto, photos,
   } = props;
+  const [photoFade, setPhotoFade] = useState('');
+
+  useEffect(() => {
+    const updateClass = modalOpen ? classes.fadeIn : '';
+    setPhotoFade(updateClass);
+  }, [modalOpen]);
+
+  useEffect(() => {
+    setPhotoFade(classes.toggleFade);
+    // setPhotoFade('');
+    console.log('changed')
+  }, [selectedPhoto]);
 
   const prevPhoto = () => {
     const newSelected = photos.find((photo) => photo.id === selectedPhoto.id - 1);
@@ -70,7 +82,7 @@ function PhotoViewer(props) {
           <img
             src={selectedPhoto.imageUrl}
             alt={selectedPhoto.description}
-            className={classes.photo}
+            className={`${classes.photo} ${photoFade}`}
           />
         </div>
         <div className={classes.centerhorizontal}>
