@@ -69,8 +69,8 @@ function PhotoViewer(props) {
       <div className={`${classes.middle} ${classes.row}`}>
         <div className={classes.centerhorizontal}>
           <IconButton
-            border={true}
-            large={true}
+            border
+            large
             handleClick={prevPhoto}
             isHidden={selectedPhoto.id === 1}
           >
@@ -86,8 +86,8 @@ function PhotoViewer(props) {
         </div>
         <div className={classes.centerhorizontal}>
           <IconButton
-            border={true}
-            large={true}
+            border
+            large
             handleClick={nextPhoto}
             isHidden={selectedPhoto.id === photos.length}
           >
