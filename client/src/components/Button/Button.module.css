@@ -13,10 +13,12 @@
   justify-content: space-between;
   align-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .btn:active {
   transform: scale(0.96);
+  z-index: 1;
 }
 
 .btn > {

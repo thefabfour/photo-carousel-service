@@ -48,6 +48,36 @@
 .photo{
   height: inherit;
   width: inherit;
+  opacity: 0;
+  transition: opacity .15s ease-out .3s;
+}
+
+.visible {
+  opacity: 100;
+  transition: opacity .1s linear 0s;
+}
+
+.fadeIn {
+  opacity: 100;
+  transition: opacity .45s ease-out .5s;
+}
+
+.toggleFade {
+  animation: .45s phototransition;
+}
+
+@keyframes phototransition {
+  0% {
+    opacity: 100;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100;
+  }
 }
 
 .icon {

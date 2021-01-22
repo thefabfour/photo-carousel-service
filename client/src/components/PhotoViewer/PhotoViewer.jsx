@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
   IoMdClose,
@@ -17,6 +17,17 @@ function PhotoViewer(props) {
   const {
     modalOpen, setModalOpen, selectedPhoto, setSelectedPhoto, photos,
   } = props;
+  const [photoFade, setPhotoFade] = useState('');
+
+  useEffect(() => {
+    const updateClass = modalOpen ? classes.fadeIn : '';
+    setPhotoFade(updateClass);
+  }, [modalOpen]);
+
+  useEffect(() => {
+    setPhotoFade(classes.toggleFade);
+    setTimeout(() => { setPhotoFade(classes.visible); }, 450);
+  }, [selectedPhoto]);
 
   const prevPhoto = () => {
     const newSelected = photos.find((photo) => photo.id === selectedPhoto.id - 1);
@@ -58,8 +69,8 @@ function PhotoViewer(props) {
       <div className={`${classes.middle} ${classes.row}`}>
         <div className={classes.centerhorizontal}>
           <IconButton
-            border={true}
-            large={true}
+            border
+            large
             handleClick={prevPhoto}
             isHidden={selectedPhoto.id === 1}
           >
@@ -70,13 +81,13 @@ function PhotoViewer(props) {
           <img
             src={selectedPhoto.imageUrl}
             alt={selectedPhoto.description}
-            className={classes.photo}
+            className={`${classes.photo} ${photoFade}`}
           />
         </div>
         <div className={classes.centerhorizontal}>
           <IconButton
-            border={true}
-            large={true}
+            border
+            large
             handleClick={nextPhoto}
             isHidden={selectedPhoto.id === photos.length}
           >
