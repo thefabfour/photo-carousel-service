@@ -43,6 +43,7 @@ function PhotoGrid(props) {
                   photo={photos[0]}
                   setSelectedPhoto={setSelectedPhoto}
                   setModalOpen={setModalOpen}
+                  name="photo-1"
                 />
               )
               : null}
@@ -57,11 +58,13 @@ function PhotoGrid(props) {
                 photo={photos[1]}
                 setSelectedPhoto={setSelectedPhoto}
                 setModalOpen={setModalOpen}
+                name="photo-2"
               />
               <PhotoItem
                 photo={photos[3]}
                 setSelectedPhoto={setSelectedPhoto}
                 setModalOpen={setModalOpen}
+                name="photo-4"
               />
             </div>
             <div className={classes.lowerright}>
@@ -69,11 +72,13 @@ function PhotoGrid(props) {
                 photo={photos[2]}
                 setSelectedPhoto={setSelectedPhoto}
                 setModalOpen={setModalOpen}
+                name="photo-3"
               />
               <PhotoItem
                 photo={photos[4]}
                 setSelectedPhoto={setSelectedPhoto}
                 setModalOpen={setModalOpen}
+                name="photo-5"
               />
             </div>
           </div>
