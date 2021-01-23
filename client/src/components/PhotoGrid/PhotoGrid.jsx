@@ -27,6 +27,10 @@ function PhotoGrid(props) {
       .catch((error) => console.log(error));
   };
 
+  useEffect(() => {
+    getPhotos(listingId);
+  }, []);
+
   const cacheImages = (photosArray) => (
     Promise.all(photosArray.map((src) => (
       new Promise((resolve, reject) => {
@@ -35,14 +39,13 @@ function PhotoGrid(props) {
         img.src = src.imageUrl;
         img.onload = resolve();
         img.onerror = reject();
-        console.log(img)//!THIS CHECKS IF IT RAN
       })
     )))
   );
 
   useEffect(() => {
-    getPhotos(listingId);
-  }, []);
+    cacheImages(photos);
+  }, [photos]);
 
   return (
     <div className={classes.photogrid}>
