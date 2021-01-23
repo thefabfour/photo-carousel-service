@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1611431519250" clover="3.2.0">
-  <project timestamp="1611431519250" name="All files">
-    <metrics statements="53" coveredstatements="37" conditionals="22" coveredconditionals="10" methods="21" coveredmethods="9" elements="96" coveredelements="56" complexity="0" loc="53" ncloc="53" packages="6" files="6" classes="6"/>
+<coverage generated="1611443071224" clover="3.2.0">
+  <project timestamp="1611443071224" name="All files">
+    <metrics statements="53" coveredstatements="39" conditionals="22" coveredconditionals="12" methods="21" coveredmethods="10" elements="96" coveredelements="61" complexity="0" loc="53" ncloc="53" packages="6" files="6" classes="6"/>
     <package name="Button">
-      <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="Button.jsx" path="/Users/kylecordell/hr/projects/FEC/photo-carousel-service/client/src/components/Button/Button.jsx">
-        <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="9" count="10" type="stmt"/>
-        <line num="11" count="10" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="16" count="10" type="stmt"/>
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="9" count="17" type="stmt"/>
+        <line num="11" count="17" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="17" type="stmt"/>
         <line num="25" count="2" type="stmt"/>
       </file>
     </package>
@@ -18,20 +18,20 @@
       <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="1"/>
       <file name="IconButton.jsx" path="/Users/kylecordell/hr/projects/FEC/photo-carousel-service/client/src/components/IconButton/IconButton.jsx">
         <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="1"/>
-        <line num="9" count="24" type="stmt"/>
-        <line num="10" count="24" type="stmt"/>
-        <line num="15" count="24" type="stmt"/>
+        <line num="9" count="48" type="stmt"/>
+        <line num="10" count="48" type="stmt"/>
+        <line num="15" count="48" type="stmt"/>
         <line num="24" count="2" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
       </file>
     </package>
     <package name="Modal">
-      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="Modal.jsx" path="/Users/kylecordell/hr/projects/FEC/photo-carousel-service/client/src/components/Modal/Modal.jsx">
-        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="9" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="11" count="4" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="9" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="5" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
       </file>
     </package>
@@ -40,19 +40,19 @@
       <file name="PhotoGrid.jsx" path="/Users/kylecordell/hr/projects/FEC/photo-carousel-service/client/src/components/PhotoGrid/PhotoGrid.jsx">
         <metrics statements="14" coveredstatements="11" conditionals="6" coveredconditionals="2" methods="5" coveredmethods="3"/>
         <line num="14" count="5" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
         <line num="22" count="4" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
+        <line num="30" count="5" type="stmt"/>
         <line num="31" count="4" type="stmt"/>
-        <line num="34" count="4" type="stmt"/>
-        <line num="105" count="1" type="stmt"/>
+        <line num="34" count="5" type="stmt"/>
+        <line num="110" count="1" type="stmt"/>
       </file>
     </package>
     <package name="PhotoItem">
@@ -70,24 +70,24 @@
       </file>
     </package>
     <package name="PhotoViewer">
-      <metrics statements="16" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="3"/>
+      <metrics statements="16" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="3"/>
       <file name="PhotoViewer.jsx" path="/Users/kylecordell/hr/projects/FEC/photo-carousel-service/client/src/components/PhotoViewer/PhotoViewer.jsx">
-        <metrics statements="16" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="3"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="17" count="6" type="stmt"/>
-        <line num="19" count="6" type="stmt"/>
-        <line num="20" count="5" type="cond" truecount="1" falsecount="1"/>
-        <line num="21" count="5" type="stmt"/>
-        <line num="24" count="6" type="stmt"/>
+        <metrics statements="16" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="3"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="20" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="24" count="12" type="stmt"/>
         <line num="25" count="5" type="stmt"/>
         <line num="26" count="5" type="stmt"/>
-        <line num="29" count="6" type="stmt"/>
+        <line num="29" count="12" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="34" count="6" type="stmt"/>
+        <line num="34" count="12" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
-        <line num="39" count="6" type="stmt"/>
+        <line num="39" count="12" type="stmt"/>
         <line num="107" count="2" type="stmt"/>
       </file>
     </package>
