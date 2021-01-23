@@ -2,11 +2,11 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
-import axios from 'axios';
+// import axios from 'axios';
 
 import PhotoGrid from '../client/src/components/PhotoGrid/PhotoGrid'
 
-jest.mock('axios');
+// jest.mock('axios');
 
 // const mockResult = [{
 //   "_id": "600b0fb8479462e630638d7b",
@@ -135,10 +135,13 @@ describe('PhotoGrid component', () => {
     expect(document.getElementsByClassName('modal')[0]).toHaveClass('modalopen');
   })
 
-  // it('photo click should open modal', () => {
-  //   render(<PhotoGrid listingId="30506101"/>);
-  //   userEvent.click(document.querySelector('.photobtn')[0]);
-  //   expect(document.getElementsByClassName('modal')[0]).toHaveClass('modalopen');
-  // })
+  it('photo click should open modal', () => {
+    render(<PhotoGrid listingId="30506101"/>);
+    const btn = screen.getAllByRole('button')[1];
+    // userEvent.click(screen.getByRole('button', {name: 'photo-1'}));
+    screen.debug(btn)
+    // expect(document.getElementsByClassName('modal')[0]).toHaveClass('modalopen');
+    // expect(btn).toBeGreaterThan(1);
+  })
 
 })

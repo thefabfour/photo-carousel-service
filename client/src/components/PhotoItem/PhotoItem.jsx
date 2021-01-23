@@ -19,7 +19,7 @@ function PhotoItem(props) {
   };
 
   return (
-    <button type="button" onClick={handleClick} className={classes.photobtn}>
+    <button type="button" onClick={handleClick} className={classes.photobtn} name="photo">
       <img
         src={thumbnailUrl}
         alt={description}
