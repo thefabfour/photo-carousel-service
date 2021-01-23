@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import userEvent from '@testing-library/user-event';
 
 import PhotoViewer from '../client/src/components/PhotoViewer/PhotoViewer'
 
@@ -24,4 +25,10 @@ describe('PhotoViewer component exists', () => {
     render(<PhotoViewer modalOpen={false} setModalOpen={() => {}} selectedPhoto={photo} setSelectedPhoto={() => {}} photos={[photo]} />);
     expect(document.querySelector('.viewer')).toBeInTheDocument();
   })
+
+  // it('"Show All Photos" button opens modal', () => {
+  //   render(<PhotoGrid listingId="30506101"/>);
+  //   userEvent.click(screen.getByText('Show All Photos'));
+  //   expect(document.getElementsByClassName('modal')[0]).toHaveClass('modalopen');
+  // })
 })

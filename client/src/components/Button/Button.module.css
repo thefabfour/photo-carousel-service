@@ -17,15 +17,6 @@
 
 .btn:active {
   transform: scale(0.96);
-<<<<<<< HEAD
-  transform-origin: center;
-  transform-style: flat;
-  /* transform: scale3d(.96, .96, 1); */
-  /* scale: 0.96; */
-  /* z-index: 1; */
-  /* transition: scale .01s linear; */
-=======
->>>>>>> master
 }
 
 .btn > {
