@@ -22,9 +22,15 @@ describe('PhotoGrid component', () => {
     expect(screen.getByText('Show All Photos')).toBeInTheDocument();
   })
 
-  it('"Show All Photos" button opens modal', () => {
+  it('"Show All Photos" button should open modal', () => {
     render(<PhotoGrid listingId="30506101"/>);
     userEvent.click(screen.getByText('Show All Photos'));
+    expect(document.getElementsByClassName('modal')[0]).toHaveClass('modalopen');
+  })
+
+  it('photo click should open modal', () => {
+    render(<PhotoGrid listingId="30506101"/>);
+    userEvent.click(screen.getByRole('button')[0]);
     expect(document.getElementsByClassName('modal')[0]).toHaveClass('modalopen');
   })
 
