@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
-  IoMdClose,
-  IoMdHeartEmpty,
-  IoIosArrowBack,
-  IoIosArrowForward,
+  IoMdHeartEmpty, IoIosArrowBack, IoIosArrowForward,
 } from 'react-icons/io';
-import { IoShareOutline } from 'react-icons/io5';
+import { IoShareOutline, IoClose } from 'react-icons/io5';
 
 import classes from './PhotoViewer.module.css';
 
@@ -49,7 +46,7 @@ function PhotoViewer(props) {
             setModalOpen={setModalOpen}
             type="closebtn"
           >
-            <IoMdClose className={classes.icon} />
+            <IoClose className={classes.icon} />
             Close
           </Button>
         </div>

@@ -5,7 +5,7 @@ import classes from './Modal.module.css';
 
 function Modal(props) {
   const { modalOpen, children } = props;
-  // TODO modal open/close classes will need to be set on keypress to avoid animation issues
+
   const modalStyle = modalOpen ? 'modalopen' : 'modalclose';
 
   return (

@@ -80,9 +80,9 @@ function PhotoGrid(props) {
         )
         : null}
 
-      <div style={{ transform: 'scale(1)' }}>
+      <div className={classes.btnContainer}>
         <Button type="allphotos" modalOpen={modalOpen} setModalOpen={setModalOpen}>
-          <CgLayoutGridSmall className={classes.icon} />
+          <CgLayoutGridSmall />
           Show All Photos
         </Button>
       </div>
@@ -102,6 +102,6 @@ function PhotoGrid(props) {
 
 export default PhotoGrid;
 
-PhotoItem.propTypes = {
+PhotoGrid.propTypes = {
   listingId: PropTypes.string.isRequired,
 };

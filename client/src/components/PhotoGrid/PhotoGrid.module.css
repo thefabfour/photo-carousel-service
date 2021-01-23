@@ -6,7 +6,6 @@
   flex-direction: row;
   height: 50vh;
   overflow: hidden;
-  z-index: 0;
 }
 
 .left{
@@ -30,6 +29,13 @@
   padding-bottom: .4rem;
 }
 
+.btnContainer {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-115%, -155%);
+}
+
 button:first-child {
   margin-right: .8rem;
 }
@@ -42,7 +48,9 @@ button:first-child {
 }
 
 .icon {
-  margin: 0;
+  padding-right: 5rem;
   height: 100%;
   width: 100%;
+  background-color: blue;
+  flex-grow: 1;
 }

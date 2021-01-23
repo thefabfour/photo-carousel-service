@@ -1,5 +1,5 @@
 .btn{
-  padding: .1rem 2rem;
+  padding: .1rem 1rem .1rem .5rem;
   border: .1rem solid var(--black);
   border-radius: .5rem;
   color: var(--black);
@@ -13,30 +13,37 @@
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  z-index: 1;
 }
 
 .btn:active {
   transform: scale(0.96);
+<<<<<<< HEAD
   transform-origin: center;
   transform-style: flat;
   /* transform: scale3d(.96, .96, 1); */
   /* scale: 0.96; */
   /* z-index: 1; */
   /* transition: scale .01s linear; */
+=======
+>>>>>>> master
 }
 
 .btn > {
   display: inline;
 }
 
+.btn > svg {
+  padding-right: .25rem;
+  height: 100%;
+}
+
 .allphotos {
-  position: absolute;
-  top: 100%;
-  left: 100%;
-  transform: translate(-115%, -155%);
   min-width: fit-content;
   white-space: nowrap;
+}
+
+.allphotos > svg {
+  width: 4rem;
 }
 
 .closebtn {
@@ -46,4 +53,8 @@
 
 .closebtn:hover {
   background-color: rgba(34, 34, 34, 0.16);
+}
+
+.closebtn > svg {
+  width: 2.5rem;
 }
