@@ -27,6 +27,19 @@ function PhotoGrid(props) {
       .catch((error) => console.log(error));
   };
 
+  const cacheImages = (photosArray) => (
+    Promise.all(photosArray.map((src) => (
+      new Promise((resolve, reject) => {
+        const img = new Image();
+
+        img.src = src.imageUrl;
+        img.onload = resolve();
+        img.onerror = reject();
+        console.log(img)//!THIS CHECKS IF IT RAN
+      })
+    )))
+  );
+
   useEffect(() => {
     getPhotos(listingId);
   }, []);
