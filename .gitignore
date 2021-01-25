@@ -2,3 +2,5 @@ node_modules
 public/bundle.js
 coverage
 .DS_Store
+.eslintrc.js
+.eslintignore

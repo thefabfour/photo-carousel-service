@@ -16,7 +16,7 @@ function PhotoGrid(props) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const photosLoaded = photos.length > 0;
-  const {listingId} = props;
+  const { listingId } = props;
 
   const getPhotos = (id) => {
     axios.get(`/api/home/${id}/photos`)
@@ -24,6 +24,7 @@ function PhotoGrid(props) {
         setPhotos(response.data[0].photos);
         setSelectedPhoto(response.data[0].photos[0]);
       })
+      // eslint-disable-next-line no-console
       .catch((error) => console.log(error));
   };
 
