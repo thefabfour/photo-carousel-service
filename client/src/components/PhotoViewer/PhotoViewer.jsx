@@ -70,6 +70,7 @@ function PhotoViewer(props) {
             large
             handleClick={prevPhoto}
             isHidden={selectedPhoto.id === 1}
+            name="previous"
           >
             <IoIosArrowBack className={classes.icon} />
           </IconButton>
@@ -87,6 +88,7 @@ function PhotoViewer(props) {
             large
             handleClick={nextPhoto}
             isHidden={selectedPhoto.id === photos.length}
+            name="next"
           >
             <IoIosArrowForward className={classes.icon} />
           </IconButton>
