@@ -13,7 +13,8 @@
     "start": "nodemon server/index.js",
     "test": "jest --verbose",
     "coverage-test": "jest  --collect-coverage",
-    "running-test": "jest  --collect-coverage --verbose --watchAll"
+    "running-test": "jest  --collect-coverage --verbose --watchAll",
+    "lint": "eslint . --ext .js,.jsx --ignore-pattern node_modules/ --ignore-pattern __tests__/ --ignore-pattern client/dist/"
   },
   "jest": {
     "moduleNameMapper": {
