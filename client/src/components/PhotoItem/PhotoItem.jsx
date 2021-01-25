@@ -6,14 +6,14 @@ import classes from './PhotoItem.module.css';
 function PhotoItem(props) {
   const { photo, setSelectedPhoto, setModalOpen } = props;
   const {
-    id, thumbnailUrl, imageUrl, description,
+    id, thumbnailUrl, description,
   } = photo;
   const assignedClasses = () => (`${classes.photo}
           ${id === 1 ? classes.photoitemleft : ''}
           ${id === 4 ? classes.photoitemtopright : ''}
           ${id === 5 ? classes.photoitembottomright : ''}`);
 
-  const handleClick = (event) => {
+  const handleClick = () => {
     setSelectedPhoto(photo);
     setModalOpen(true);
   };
@@ -33,6 +33,13 @@ function PhotoItem(props) {
 export default PhotoItem;
 
 PhotoItem.propTypes = {
-  photo: PropTypes.object.isRequired,
+  photo: PropTypes.shape({
+    id: PropTypes.number,
+    thumbnailUrl: PropTypes.string,
+    imageUrl: PropTypes.string,
+    description: PropTypes.string,
+    room: PropTypes.string,
+  }).isRequired,
   setSelectedPhoto: PropTypes.func.isRequired,
+  setModalOpen: PropTypes.func.isRequired,
 };

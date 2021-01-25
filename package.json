@@ -2,22 +2,28 @@
   "name": "photo-carousel-service",
   "version": "1.0.0",
   "description": "4BNB photo carousel service",
+  "keywords": [],
+  "license": "ISC",
+  "author": "Kyle Cordell",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose",
-    "running-test": "jest --verbose --watchAll",
     "babel": "npx babel --watch src --out-dir . --presets react-app/prod",
     "react-dev": "webpack -w",
+    "seed": "node database/seed.js",
     "start": "nodemon server/index.js",
-    "seed": "node database/seed.js"
+    "test": "jest --verbose",
+    "coverage-test": "jest  --collect-coverage",
+    "running-test": "jest  --collect-coverage --verbose --watchAll",
+    "lint": "eslint . --ext .js,.jsx --ignore-pattern node_modules/ --ignore-pattern __tests__/ --ignore-pattern client/dist/"
   },
-  "keywords": [],
-  "author": "Kyle Cordell",
-  "license": "ISC",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  },
   "dependencies": {
     "axios": "^0.21.1",
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2",
     "css-loader": "^5.0.1",
     "express": "^4.17.1",
     "faker": "^5.1.0",
@@ -37,10 +43,9 @@
     "@shelf/jest-mongodb": "^1.2.3",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
-    "babel-core": "^6.26.3",
+    "@testing-library/user-event": "^12.6.2",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
-    "babel-preset-react": "^6.24.1",
     "eslint": "^7.17.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
@@ -51,11 +56,5 @@
     "jest": "^26.6.3",
     "react-test-renderer": "^17.0.1",
     "webpack-cli": "^4.3.1"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "identity-obj-proxy"
-    }
   }
 }

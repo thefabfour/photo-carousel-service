@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const { PhotoCollection, db, getPhotos } = require('../database/index.js');
+const { getPhotos } = require('../database/index.js');
 
 const app = express();
 const PORT = 3000;

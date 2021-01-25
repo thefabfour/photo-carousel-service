@@ -66,6 +66,7 @@ function PhotoViewer(props) {
       <div className={`${classes.middle} ${classes.row}`}>
         <div className={classes.centerhorizontal}>
           <IconButton
+            className="previous"
             border
             large
             handleClick={prevPhoto}
@@ -83,6 +84,7 @@ function PhotoViewer(props) {
         </div>
         <div className={classes.centerhorizontal}>
           <IconButton
+            className="next"
             border
             large
             handleClick={nextPhoto}
