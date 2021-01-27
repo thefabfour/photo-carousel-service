@@ -4,5 +4,5 @@ import PhotoGrid from './components/PhotoGrid/PhotoGrid';
 
 ReactDOM.render(
   <PhotoGrid />,
-  document.getElementById('photos-module'),
+  document.getElementById('service3'),
 );
