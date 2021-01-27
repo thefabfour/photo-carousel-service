@@ -4,7 +4,7 @@ const cors = require('cors');
 const { getPhotos } = require('../database/index.js');
 
 const app = express();
-const PORT = 3003;
+const PORT = process.env.PORT || 3003;
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 
 app.use(cors());

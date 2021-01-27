@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import { CgLayoutGridSmall } from 'react-icons/cg';
 
@@ -18,7 +17,7 @@ function PhotoGrid() {
   const photosLoaded = photos.length > 0;
 
   const getPhotos = () => {
-    const propertyId = new URLSearchParams(window.location.search).get('propertyId');
+    const propertyId = new URLSearchParams(window.location.search).get('propertyId') || '30506101';
 
     axios.get(`/api/home/${propertyId}/photos`)
       .then((response) => {
