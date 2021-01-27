@@ -28,6 +28,19 @@ describe('PhotoViewer component exists', () => {
     expect(sourceOne).toEqual(expect.not.stringContaining(sourceTwo));
   })
 
+  it('next button advances to next photo', () => {
+    const mockSetSelectedPhoto = jest.fn(value => (value))
+
+    render(<PhotoViewer modalOpen={false} setModalOpen={() => {}} selectedPhoto={photo} setSelectedPhoto={mockSetSelectedPhoto} photos={photos} />);
+
+    userEvent.click(document.getElementsByClassName('next')[0]);
+    // expect(document.getElementsByClassName('modal')[0]).toHaveClass('modalopen');
+  })
+
+  it('back button returns to previous photo', () => {
+
+  })
+
   it('description should be displayed', () => {
     render(<PhotoViewer modalOpen={false} setModalOpen={() => {}} selectedPhoto={photo} setSelectedPhoto={() => {}} photos={photos} />);
 

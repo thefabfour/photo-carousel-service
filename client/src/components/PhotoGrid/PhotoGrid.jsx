@@ -10,16 +10,17 @@ import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
 import PhotoViewer from '../PhotoViewer/PhotoViewer';
 
-function PhotoGrid(props) {
+function PhotoGrid() {
   const [photos, setPhotos] = useState([]);
   const [selectedPhoto, setSelectedPhoto] = useState({});
   const [modalOpen, setModalOpen] = useState(false);
 
   const photosLoaded = photos.length > 0;
-  const { listingId } = props;
 
-  const getPhotos = (id) => {
-    axios.get(`/api/home/${id}/photos`)
+  const getPhotos = () => {
+    const propertyId = new URLSearchParams(window.location.search).get('propertyId');
+
+    axios.get(`/api/home/${propertyId}/photos`)
       .then((response) => {
         setPhotos(response.data[0].photos);
         setSelectedPhoto(response.data[0].photos[0]);
@@ -29,7 +30,7 @@ function PhotoGrid(props) {
   };
 
   useEffect(() => {
-    getPhotos(listingId);
+    getPhotos();
   }, []);
 
   const cacheImages = (photosArray) => (
@@ -123,7 +124,3 @@ function PhotoGrid(props) {
 }
 
 export default PhotoGrid;
-
-PhotoGrid.propTypes = {
-  listingId: PropTypes.string.isRequired,
-};
