@@ -8,9 +8,11 @@
   "main": "index.js",
   "scripts": {
     "babel": "npx babel --watch src --out-dir . --presets react-app/prod",
-    "react-dev": "webpack -w",
+    "build-dev": "webpack -w --mode development",
+    "build-prod": "webpack --mode production",
     "seed": "node database/seed.js",
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "start-dev": "nodemon server/index.js",
     "test": "jest --verbose",
     "coverage-test": "jest  --collect-coverage",
     "running-test": "jest  --collect-coverage --verbose --watchAll",
@@ -24,6 +26,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "compression": "^1.7.4",
     "cors": "^2.8.5",
     "css-loader": "^5.0.1",
     "express": "^4.17.1",

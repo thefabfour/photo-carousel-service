@@ -1,12 +1,14 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
+const compression = require('compression');
 const { getPhotos } = require('../database/index.js');
 
 const app = express();
 const PORT = process.env.PORT || 3003;
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 
+app.use(compression());
 app.use(cors());
 app.use(express.json());
 

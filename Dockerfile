@@ -1,13 +1,12 @@
 FROM node:14-alpine
 
-RUN mkdir -p /src/app
-
 WORKDIR /app
 
-COPY . /app
+COPY ./package.json ./
+COPY ./package-lock.json ./
 
-RUN yarn install
+RUN npm install --production
 
-EXPOSE 3003
+COPY . .
 
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
