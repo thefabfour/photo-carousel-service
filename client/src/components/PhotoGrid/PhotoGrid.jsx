@@ -118,6 +118,7 @@ function PhotoGrid() {
           photos={photos}
         />
       </Modal>
+
     </div>
   );
 }

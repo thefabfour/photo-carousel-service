@@ -1,12 +1,14 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
+const compression = require('compression');
 const { getPhotos } = require('../database/index.js');
 
 const app = express();
 const PORT = process.env.PORT || 3003;
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 
+app.use(compression());
 app.use(cors());
 app.use(express.json());
 
@@ -21,7 +23,10 @@ app.use(express.static(PUBLIC_DIR));
 app.get('/api/home/:id/photos', (req, res) => {
   const { id } = req.params;
   getPhotos(id)
-    .then((results) => res.send(results).status(200))
+    .then((results) => res
+      .send(results)
+      .status(200)
+      .set('Cache-Control', 'public, max-age=31557600'))
     .catch(() => res.status(500));
 });
 
