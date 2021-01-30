@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, {
+  useState, useEffect,// lazy, Suspense,
+} from 'react';
 import axios from 'axios';
 import { CgLayoutGridSmall } from 'react-icons/cg';
 
@@ -8,6 +10,9 @@ import PhotoItem from '../PhotoItem/PhotoItem';
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
 import PhotoViewer from '../PhotoViewer/PhotoViewer';
+
+// const Modal = lazy(() => import('../Modal/Modal'));
+// const PhotoViewer = lazy(() => import('../PhotoViewer/PhotoViewer'));
 
 function PhotoGrid() {
   const [photos, setPhotos] = useState([]);
@@ -109,15 +114,18 @@ function PhotoGrid() {
         </Button>
       </div>
 
-      <Modal modalOpen={modalOpen}>
-        <PhotoViewer
-          modalOpen={modalOpen}
-          setModalOpen={setModalOpen}
-          selectedPhoto={selectedPhoto}
-          setSelectedPhoto={setSelectedPhoto}
-          photos={photos}
-        />
-      </Modal>
+      {/* <Suspense fallback={null}> */}
+        <Modal modalOpen={modalOpen}>
+          <PhotoViewer
+            modalOpen={modalOpen}
+            setModalOpen={setModalOpen}
+            selectedPhoto={selectedPhoto}
+            setSelectedPhoto={setSelectedPhoto}
+            photos={photos}
+          />
+        </Modal>
+      {/* </Suspense> */}
+
     </div>
   );
 }

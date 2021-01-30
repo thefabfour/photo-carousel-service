@@ -23,7 +23,10 @@ app.use(express.static(PUBLIC_DIR));
 app.get('/api/home/:id/photos', (req, res) => {
   const { id } = req.params;
   getPhotos(id)
-    .then((results) => res.send(results).status(200))
+    .then((results) => res
+      .send(results)
+      .status(200)
+      .set('Cache-Control', 'public, max-age=31557600'))
     .catch(() => res.status(500));
 });
 
